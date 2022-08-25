@@ -25,6 +25,9 @@ import {
     // BellIcon,
     ChevronDownIcon,
   } from "@chakra-ui/icons";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Context";
+import { Navigate, useNavigate } from "react-router-dom";
   
   const Links = ["🌐"," English", "Support", "Trips"];
   
@@ -45,7 +48,16 @@ import {
   
   export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-  
+  const auth =useContext(AuthContext);
+  const navigate=useNavigate()
+  console.log("auth",auth);
+  const Logout=(e)=>{
+e.preventDefault();
+auth.handleLogout();
+  }
+  const moveTo=()=>{
+    navigate("/login")
+  }
     return (
       < Box    justifyContent={"space-around"}>
         <Box
@@ -119,20 +131,21 @@ import {
                   variant={"link"}
                   cursor={"pointer"}
                   minW={0}
+                  // onClick={Navigate("/login")}
                 >
                   {/* <Avatar
                     size={"sm"}
                     src='https://bit.ly/broken-link' 
                   /> */}
-                  Signin
+                 {auth.state.isAuth===true?<h3>{auth.state.name}</h3>: <h3>Signin</h3>}
                 </MenuButton>
                 <MenuList>
-                <Button bgColor={"blue"} borderRadius={"5px"} maxW={"100%"}><Link href='/signin'>Signin</Link></Button>
-                  <Link href={"/signup"}><Tabs>Signup,it's free</Tabs></Link>
+                <Button bgColor={"blue"} borderRadius={"5px"} maxW={"100%"}><Link >{auth.state.isAuth===true?<h3 onClick={Logout}>Logout</h3>:<h3 onClick={moveTo}>Signin</h3> }</Link></Button>
+                {auth.state.isAuth===true?null: <Box><Link to="/login" ><Tabs>Signup,it's free</Tabs></Link>
                   <MenuItem>List of Favourites</MenuItem>
                   <MenuItem>Expedia Rewards</MenuItem>
                   <MenuDivider />
-                  <MenuItem>Feedback</MenuItem>
+                  <MenuItem>Feedback</MenuItem></Box>}
                 </MenuList>
               </Menu>
             </Flex>

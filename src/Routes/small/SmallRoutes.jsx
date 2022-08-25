@@ -22,4 +22,4 @@ function SmallRoutes() {
   )
 }
 
-export default SmallRoutes
+export default SmallRoutes;
