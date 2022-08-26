@@ -34,7 +34,7 @@ function HotelCard({data}) {
     } =data
     console.log("ejglkdblidvjvdvkvdhhn",data)
     return (
-        <HStack boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} w={"790px"} marginLeft={"550px"} gap={4}>
+        <HStack boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} w={"790px"} marginLeft={"20px"} gap={4}>
         <Box
             w="280px"      
             borderWidth="1px"

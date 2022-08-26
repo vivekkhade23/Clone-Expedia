@@ -6,6 +6,8 @@ import Login from './Routes/main/Login';
 import SmallRoutes from './Routes/small/SmallRoutes';
 import HotelCard  from "./Components/hotelCard"
 import SearchPage  from './pages/searchPage';
+import Filter from './Components/Filter';
+import Leftbar from './Components/Leftbar';
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,8 @@ function App() {
     {/* <hotelCard/> */}
     {/* <HotelCard/> */}
     <SearchPage/>
+    {/* <Filter/> */}
+    {/* <Leftbar/> */}
     </div>
   )
 }
