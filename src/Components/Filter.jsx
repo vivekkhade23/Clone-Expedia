@@ -8,7 +8,8 @@ import {
     SliderMark,
   } from '@chakra-ui/react'
   
-function Filter() {
+function Filter({handleRating}) {
+  console.log(handleRating)
   return (
     <div>
      <VStack backgroundColor={"#f8f5f4"} w={"345px"}gap={3}>
@@ -60,7 +61,7 @@ Star rating
     <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white">1★</Box>
     <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white">2★</Box>
     <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white">3★</Box>
-    <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white">4★</Box>
+    <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white" onClick={()=>handleRating()}>4★</Box>
 </HStack>
 <Box border={"1px solid"} padding="7px" w={"50px"} borderRadius={10} bgColor="white">5★</Box>
 
