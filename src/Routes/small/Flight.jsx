@@ -2,8 +2,10 @@ import { Box, Button, Grid, GridItem, Input, InputGroup, InputLeftElement, Space
 import { DatePicker } from 'chakra-ui-date-input';
 import React from 'react'
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function Flight() {
+    const navigate=useNavigate();
   return (
  <Box padding={"20px"}  w={"1000px"} marginLeft={"250px"}>
        <br />
@@ -49,7 +51,7 @@ function Flight() {
         </GridItem>
 </Grid>
 <Box>
-    <Button color={"white"} bg={"#3662d8"}>Search</Button>
+    <Button color={"white"} onClick={navigate("/search")} bg={"#3662d8"}>Search</Button>
 </Box>
 <hr />
 </Box>

@@ -3,6 +3,7 @@ import React from 'react'
 import Filter from '../Components/Filter'
 import HotelCard from '../Components/hotelCard'
 import Leftbar from '../Components/Leftbar'
+import Navbar from '../Components/Navbar'
 // import { Box, Checkbox, HStack, Input, Radio, Text, VStack } from '@chakra-ui/react'
 // import React from 'react'
 import {
@@ -15,6 +16,7 @@ import {
   
 import data from "../data/data.json"
 import { useState } from 'react'
+import Footer from '../Components/Footer'
 console.log("dtata",data.hotelDetails)
 function SearchPage() {
   const [flag,setFlag]=useState(false)
@@ -61,7 +63,8 @@ console.log("viv",x);
 setInfo(x)
 }
 
-  return (
+  return (<Box>
+    <Navbar/>
          <Container w={"1300px"} display="flex" marginLeft={"-10px"}>
         <Box  >
         <VStack backgroundColor={"#f8f5f4"} w={"345px"}gap={3}>
@@ -153,6 +156,8 @@ Payment type
   </Box>
 
               </Container>
+              <Footer/>
+              </Box>
   )
 }
 

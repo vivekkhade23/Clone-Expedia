@@ -2,8 +2,10 @@ import { GridItem, Input, InputGroup, InputLeftElement, Grid, Box, Checkbox, Spa
 import { FaMapMarkerAlt, FaUserAlt } from "react-icons/fa";
 import { DatePicker } from 'chakra-ui-date-input'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Stay() {
+    const navigate=useNavigate();
     const [check, setCheck] = useState(false);
 
 
@@ -86,7 +88,7 @@ export function Stay() {
 <br />
         <Spacer />
 <Box>
-    <Button color={"white"} bg={"#3662d8"}>Search</Button>
+    <Button onClick={navigate("/search")} color={"white"} bg={"#3662d8"}>Search</Button>
 </Box>
 <br />
 <hr />

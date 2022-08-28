@@ -2,8 +2,10 @@ import React from 'react'
 import { Box, Button, Grid, GridItem, Input, InputGroup, InputLeftElement, Spacer } from '@chakra-ui/react';
 import { DatePicker } from 'chakra-ui-date-input';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function Cars() {
+    const navigate=useNavigate();
   return (
     <div>
         <Box padding={"20px"}  w={"1000px"} marginLeft={"250px"}>
@@ -50,7 +52,7 @@ function Cars() {
         </GridItem>
 </Grid>
 <Box>
-    <Button color={"white"} bg={"#3662d8"}>Search</Button>
+    <Button onClick={navigate("/search")} color={"white"} bg={"#3662d8"}>Search</Button>
 </Box>
 <hr />
 </Box>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Cars from './Cars'
 import Flight from './Flight'
 import Package from './Package'
@@ -8,6 +8,7 @@ import Things from './Things'
 
 
 function SmallRoutes() {
+  const navigate=useNavigate();
   return (
     <div>
         <Routes>
